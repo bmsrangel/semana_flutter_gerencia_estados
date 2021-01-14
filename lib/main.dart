@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:rx_notifier/rx_notifier.dart';
 
-import 'mobx/app_store.dart';
+import 'rx/app_store.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Observer(builder: (_) {
+            RxBuilder(builder: (_) {
               return Text(
                 appStore.counter.value.toString(),
                 style: Theme.of(context).textTheme.headline4,
